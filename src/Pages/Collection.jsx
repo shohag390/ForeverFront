@@ -13,8 +13,6 @@ const Collection = () => {
   const [subCategory, setSubCategory] = useState([]);
   const [sortType, setSortType] = useState("relavent");
 
-  console.log(sortType);
-
   const toggleCategory = (e) => {
     if (category.includes(e.target.value)) {
       setCategory((prev) => prev.filter((item) => item !== e.target.value));
@@ -82,12 +80,12 @@ const Collection = () => {
   return (
     <>
       <SearchBar />
-      <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10">
+      <div className="flex flex-col gap-1 pt-10 sm:flex-row sm:gap-10">
         {/* Fiter Options */}
         <div className="min-w-60">
           <p
             onClick={() => setShowFilter(!showFilter)}
-            className="my-2 text-xl flex items-center cursor-pointer gap-2"
+            className="flex items-center gap-2 my-2 text-xl cursor-pointer"
           >
             FILTERS
             <img
@@ -173,12 +171,12 @@ const Collection = () => {
         </div>
         {/* Right Side */}
         <div className="flex-1">
-          <div className="flex justify-between text-base sm:text-2xl mb-4">
+          <div className="flex justify-between mb-4 text-base sm:text-2xl">
             <Title text1={"ALL"} text2={"COLLECTION"} />
             {/* Product Sort */}
             <select
               onChange={(e) => setSortType(e.target.value)}
-              className="border outline-none border-gray-300 text-sm px-2"
+              className="px-2 text-sm border border-gray-300 outline-none"
             >
               <option value="relavent">Sort by: Relavent</option>
               <option value="low-high">Sort by: Low to High</option>
@@ -186,7 +184,7 @@ const Collection = () => {
             </select>
           </div>
           {/* Map Product */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 gap-y-6">
             {filterProduct?.map((item, index) => (
               <ProductItem
                 key={index}
