@@ -22,7 +22,7 @@ const Collection = () => {
   };
 
   const toggleSubCategory = (e) => {
-    if (category.includes(e.target.value)) {
+    if (subCategory.includes(e.target.value)) {
       setSubCategory((prev) => prev.filter((item) => item !== e.target.value));
     } else {
       setSubCategory((prev) => [...prev, e.target.value]);
@@ -71,7 +71,7 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory, search]);
+  }, [category, subCategory, search, products]);
 
   useEffect(() => {
     sortProduct();
@@ -107,7 +107,7 @@ const Collection = () => {
                   className="w-3"
                   onChange={toggleCategory}
                   type="checkbox"
-                  value={"Men"}
+                  value={"men"}
                 />{" "}
                 Men
               </p>
@@ -116,7 +116,7 @@ const Collection = () => {
                   className="w-3"
                   onChange={toggleCategory}
                   type="checkbox"
-                  value={"Women"}
+                  value={"women"}
                 />{" "}
                 Women
               </p>
@@ -125,7 +125,7 @@ const Collection = () => {
                   className="w-3"
                   onChange={toggleCategory}
                   type="checkbox"
-                  value={"Kids"}
+                  value={"kids"}
                 />
                 Kids
               </p>
@@ -144,27 +144,72 @@ const Collection = () => {
                   className="w-3"
                   type="checkbox"
                   onChange={toggleSubCategory}
-                  value={"Topwear"}
+                  value={"tshirt"}
                 />{" "}
-                Topwear
+                T-Shirt
               </p>
               <p className="flex gap-2">
                 <input
                   className="w-3"
                   type="checkbox"
                   onChange={toggleSubCategory}
-                  value={"Bottomwear"}
+                  value={"menpant"}
                 />{" "}
-                Bottomwear
+                Men Pant
               </p>
               <p className="flex gap-2">
                 <input
                   className="w-3"
                   type="checkbox"
                   onChange={toggleSubCategory}
-                  value={"Winterwear"}
+                  value={"menshoes"}
                 />
-                Winterwear
+                Men Shoes
+              </p>
+              <p className="flex gap-2">
+                <input
+                  className="w-3"
+                  type="checkbox"
+                  onChange={toggleSubCategory}
+                  value={"menwatch"}
+                />
+                Men Watch
+              </p>
+              <p className="flex gap-2">
+                <input
+                  className="w-3"
+                  type="checkbox"
+                  onChange={toggleSubCategory}
+                  value={"womendress"}
+                />
+                Women Dress
+              </p>
+              <p className="flex gap-2">
+                <input
+                  className="w-3"
+                  type="checkbox"
+                  onChange={toggleSubCategory}
+                  value={"womenshoes"}
+                />
+                Women Shoes
+              </p>
+              <p className="flex gap-2">
+                <input
+                  className="w-3"
+                  type="checkbox"
+                  onChange={toggleSubCategory}
+                  value={"womenbag"}
+                />
+                Women Bag
+              </p>
+              <p className="flex gap-2">
+                <input
+                  className="w-3"
+                  type="checkbox"
+                  onChange={toggleSubCategory}
+                  value={"kidsdress"}
+                />
+                Kids Dress
               </p>
             </div>
           </div>
